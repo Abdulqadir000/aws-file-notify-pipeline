@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#232f3e"/></marker>
+  </defs>
+  <rect width="1200" height="360" fill="#ffffff"/>
+  <text x="600" y="40" text-anchor="middle" font-size="22" font-weight="700" fill="#232f3e">Event-Driven File Notification Pipeline (AWS CLI only)</text>
+  <g stroke="#232f3e" stroke-width="1.5">
+    <rect x="25"   y="100" width="150" height="80" rx="10" fill="#e8f5e9"/>
+    <rect x="225"  y="100" width="150" height="80" rx="10" fill="#fff3e0"/>
+    <rect x="425"  y="100" width="150" height="80" rx="10" fill="#ede7f6"/>
+    <rect x="625"  y="100" width="150" height="80" rx="10" fill="#e8f5e9"/>
+    <rect x="825"  y="100" width="150" height="80" rx="10" fill="#fce4ec"/>
+    <rect x="1025" y="100" width="150" height="80" rx="10" fill="#e3f2fd"/>
+    <rect x="330" y="250" width="180" height="60" rx="10" fill="#f5f5f5" stroke-dasharray="5 4"/>
+    <rect x="530" y="250" width="150" height="60" rx="10" fill="#f5f5f5" stroke-dasharray="5 4"/>
+  </g>
+  <g text-anchor="middle" fill="#232f3e" font-size="15">
+    <text x="100" y="135" font-weight="700">S3 Upload</text><text x="100" y="158" font-size="12">sample.txt</text>
+    <text x="300" y="135" font-weight="700">SQS Queue</text><text x="300" y="158" font-size="12">{bucket, key}</text>
+    <text x="500" y="135" font-weight="700">Lambda</text><text x="500" y="158" font-size="12">Node.js 22</text>
+    <text x="700" y="135" font-weight="700">S3 HeadObject</text><text x="700" y="158" font-size="12">get file details</text>
+    <text x="900" y="135" font-weight="700">SNS Topic</text><text x="900" y="158" font-size="12">publish</text>
+    <text x="1100" y="135" font-weight="700">Email</text><text x="1100" y="158" font-size="12">subscriber</text>
+    <text x="420" y="285" font-size="13">IAM Role (least privilege)</text>
+    <text x="605" y="285" font-size="13">CloudWatch Logs</text>
+    <text x="300" y="215" font-size="12">event source mapping</text>
+    <text x="600" y="345" font-size="12" fill="#666666">Failed messages are retried via partial batch responses (ReportBatchItemFailures)</text>
+  </g>
+  <g stroke="#232f3e" stroke-width="2" marker-end="url(#a)" fill="none">
+    <path d="M175 140H222"/><path d="M375 140H422"/><path d="M575 140H622"/><path d="M775 140H822"/><path d="M975 140H1022"/>
+  </g>
+  <g stroke="#232f3e" stroke-width="1.5" stroke-dasharray="5 4" fill="none">
+    <path d="M480 183L420 250"/><path d="M520 183L605 250"/>
+  </g>
+</svg>

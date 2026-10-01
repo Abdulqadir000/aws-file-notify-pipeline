@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    { "Sid": "ReadOneObject", "Effect": "Allow", "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::${BUCKET}/${KEY}" },
+    { "Sid": "ListForProper404", "Effect": "Allow", "Action": "s3:ListBucket",
+      "Resource": "arn:aws:s3:::${BUCKET}" },
+    { "Sid": "ConsumeQueue", "Effect": "Allow",
+      "Action": ["sqs:ReceiveMessage", "sqs:DeleteMessage", "sqs:GetQueueAttributes"],
+      "Resource": "${QUEUE_ARN}" },
+    { "Sid": "PublishTopic", "Effect": "Allow", "Action": "sns:Publish",
+      "Resource": "${TOPIC_ARN}" },
+    { "Sid": "WriteLogs", "Effect": "Allow",
+      "Action": ["logs:CreateLogStream", "logs:PutLogEvents"],
+      "Resource": "arn:aws:logs:${REGION}:${ACCOUNT_ID}:log-group:/aws/lambda/${FN}:*" }
+  ]
+}
